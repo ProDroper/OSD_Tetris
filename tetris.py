@@ -40,7 +40,7 @@ class Piece:
         if piece_name:
             self.piece_name = piece_name
         else:
-            self.piece_name = random.choice(Piece.PIECES.keys())
+            self.piece_name = random.choice(list(Piece.PIECES.keys()))
         self.rotation = 0
         self.array2d = Piece.PIECES[self.piece_name][self.rotation]
 
@@ -63,7 +63,7 @@ class Board:
         self.height = 22
         self.block_size = 25
         self.board = []
-        for _ in xrange(self.height):
+        for _ in range(self.height):
             self.board.append([0] * self.width)
         self.generate_piece()
 
@@ -224,7 +224,7 @@ class Tetris:
 
         while True:
             if self.board.game_over():
-                print "Game over"
+                print("Game over")
                 pygame.quit()
                 sys.exit()
             self.screen.fill((0, 0, 0))
