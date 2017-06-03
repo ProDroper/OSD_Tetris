@@ -155,7 +155,7 @@ class Board:
         return self.block_size*x, self.block_size*(y-2)
 
     def _delete_line(self, y):
-        for y in reversed(xrange(1, y+1)):
+        for y in reversed(range(1, y+1)):
             self.board[y] = list(self.board[y-1])
 
     def delete_lines(self):
